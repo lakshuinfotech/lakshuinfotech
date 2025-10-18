@@ -1,0 +1,639 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAKSHU INFOTECH - CCTV & Security Systems</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #e64c4c;
+            --secondary: #0e2a5e;
+            --accent: rgb(230, 72, 72);
+            --light: #ffffff;
+            --dark: #1e293b;
+            --gray: #64748b;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }   
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;   
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+        
+        .call-now-btn {
+            background-color: var(--accent);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+        
+        .call-now-btn:hover {
+            background-color: #e55a00;
+        }
+        
+        .call-now-btn i {
+            margin-right: 5px;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--dark);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(10, 30, 70, 0.8), rgba(10, 30, 70, 0.9)), url('https://png.pngtree.com/thumb_back/fh260/background/20240721/pngtree-wireless-ip-camera-monitors-an-house-to-prevent-theft-image_15904538.jpg');
+            background-size: cover;
+            background-position: center;
+            color: rgb(255, 255, 255);
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 8px;
+        }
+        
+        .hero p {
+            font-size: 1rem;
+            max-width: 700px;
+            margin: 0 auto 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: hsl(24, 100%, 45%);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 10px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-img {
+            height: 250px;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .service-content {
+            padding: 20px;
+        }
+        
+        .service-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+        
+        .service-content p {
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 30px 0;
+            background-color: white;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h2 {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        .about-text p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 50px 0;
+            background-color: var(--light);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
+        .contact-details p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-details i {
+            margin-right: 10px;
+            color: var(--primary);
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--secondary);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+        
+        /* Mobile Responsive Styles */
+        @media (max-width: 1080px) {
+            .header-container {
+                padding: 15px 0;
+            }
+            
+            nav {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                padding: 20px;
+            }
+            
+            nav ul li {
+                margin: 0 0 15px 0;
+            }
+            
+            .call-now-btn {
+                margin-top: 10px;
+                justify-content: center;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                padding: 40px 0;
+            }
+            
+            .hero h2 {
+                font-size: 1rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .services, .about, .contact {
+                padding: 20px 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.5rem;
+            }
+            
+            .service-card {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <h1>LAKSHU <span> INFOTECH</span></h1>
+            </div>
+            <button class="mobile-menu-btn">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="tel:9717153364" class="call-now-btn"><i class="fas fa-phone"></i> Call Now: 9717153364</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h2>Complete CCTV Security & IT Solutions</h2>
+            <p>We provide high-quality CCTV cameras, computer systems, EPBX, biometric devices, and video door phones to ensure your safety and security.</p>
+            <a href="tel:9717153364" class="btn"><i class="fas fa-phone"></i> Call Now: 9717153364</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Products & Services</h2>
+                <p>We offer a comprehensive range of security and communication solutions</p>
+            </div>
+            <div class="services-grid">
+                <!-- CCTV Cameras -->
+                <div class="service-card">
+                    <img src="https://www.kindpng.com/picc/m/331-3319320_transparent-background-cctv-camera-png-png-download.png" alt="CCTV Camera" class="service-img">
+                    <div class="service-content">
+                        <h3>CCTV Camera Systems</h3>
+                        <p>High-resolution surveillance cameras for indoor and outdoor security with remote monitoring capabilities.</p>
+                        <a href="tel:9717153364" class="btn">Call for Quote</a>
+                    </div>
+                </div>
+                
+                <!-- Computer Systems & Networking -->
+                <div class="service-card">
+                    <img src="https://t3.ftcdn.net/jpg/03/40/59/14/360_F_340591403_1a5sd1hXg78FIq4n6oeoXZtHP9Mjucsm.jpg"alt="Computer Systems" class="service-img">
+                    <div class="service-content">
+                        <h3>Computer & Networking Systems</h3>
+                        <p>Customized computer solutions for businesses including workstations, servers, and networking equipment.</p>
+                        <a href="tel:9717153364" class="btn">Call for Quote</a>
+                    </div>
+                </div>
+                
+                <!-- EPBX Systems -->
+                <div class="service-card">
+                    <img src="https://technoeyenet.com/wp-content/uploads/2020/02/epabx.jpg" alt="EPBX System" class="service-img">
+                    <div class="service-content">
+                        <h3>EPBX Systems</h3>
+                        <p>Advanced telephone exchange systems for efficient business communication with multiple extensions.</p>
+                        <a href="tel:9717153364" class="btn">Call for Quote</a>
+                    </div>
+                </div>
+                
+                <!-- Biometric Devices -->
+                <div class="service-card">
+                    <img src="https://5.imimg.com/data5/SELLER/Default/2021/5/GD/SX/OX/125962096/biometric-access-control-system.jpg" alt="Biometric Device" class="service-img" style="width:400px; height:160px;">
+                    <div class="service-content">
+                        <h3>Biometric Systems</h3>
+                        <p>Secure access control systems using fingerprint, face recognition, and other biometric technologies.</p>
+                        <a href="tel:9717153364" class="btn">Call for Quote</a>
+                    </div>
+                </div>
+                
+                <!-- Video Door Phones -->
+                <div class="service-card">
+                    <img src="https://4.imimg.com/data4/NB/QG/MY-24833048/video-door-phone-500x500.jpg" alt="Video Door Phone" class="service-img">
+                    <div class="service-content">
+                        <h3>Video Door Phones</h3>
+                        <p>Advanced door entry systems with video calling, remote unlocking, and visitor monitoring features.</p>
+                        <a href="tel:9717153364" class="btn">Call for Quote</a>
+                    </div>
+                </div>
+                
+                <!-- Mobile Signal Booster -->
+                <div class="service-card">
+                    <img src="https://cellexxabooster.in/wp-content/uploads/2023/07/quad-band-mobile-signal-booster.jpg" alt="Mobile Signal Booster" class="service-img;" style="width:400px; height:250px;">
+                    <div class="service-content"></div>
+                        <h3>Mobile Signal Booster</h3>
+                        <p>Complete security packages combining multiple technologies for comprehensive protection.</p>
+                        <a href="tel:9717153364" class="btn">Call for Quote</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Lakshu Infotech</h2>
+                    <p>With over 15 years of experience in the security and IT industry, Lakshu Infotech has established itself as a trusted provider of cutting-edge technology solutions.</p>
+                    <p>Our team of professionals specializes in designing, installing, and maintaining comprehensive security and communication systems for businesses of all sizes.</p>
+                    <p>We pride ourselves on delivering reliable, scalable solutions that meet our clients' unique needs while providing exceptional customer service and technical support.</p>
+                    <a href="tel:9717153364" class="btn"><i class="fas fa-phone"></i> Call Now: 9717153364</a>
+                </div>
+                <div class="about-image">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Get in touch with our experts for a free security assessment</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <div class="contact-details">
+                        <p><i class="fas fa-map-marker-alt"></i>Lakshu Infotech Wazirpur Delhi-110052</p>
+                        <p><i class="fas fa-phone"></i> <a href="tel:9717153364" style="color: var(--dark); text-decoration: none;">+91 9717153364</a></p>
+                        <p><i class="fas fa-envelope"></i> lakshuinfotech@gmail.com</p>
+                        <p><i class="fas fa-clock"></i> Mon - Sat: 10:00 AM - 7:00 PM</p>
+                    </div>
+                    <h3>Our Services Areas</h3>
+                    <p>We provide security and Other IT solutions for residential, commercial, and industrial properties in pan india.</p>
+                    <a href="tel:9717153364" class="btn" style="margin-top: 20px;"><i class="fas fa-phone"></i> Call Now</a>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <input type="tel" placeholder="Your Phone">
+                        <select style="width: 100%; padding: 12px 15px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem;">
+                            <option value="">Select Service</option>
+                            <option value="cctv">CCTV Camera Systems</option>
+                            <option value="computer">Computer Systems</option>
+                            <option value="epbx">EPBX Systems</option>
+                            <option value="biometric">Biometric Systems</option>
+                            <option value="doorphone">Video Door Phones</option>
+                            <option value="integrated">Integrated Security Solutions</option>
+                        </select>
+                        <textarea placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Lakshu Infotech</h3>
+                    <p>Your trusted partner for complete security and communication solutions.</p>
+                    <p style="margin-top: 15px;"><i class="fas fa-phone"></i> <a href="tel:9717153364" style="color: #cbd5e1; text-decoration: none;">+91 9717153364</a></p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="#">CCTV Cameras Systems</a></li>
+                        <li><a href="#">Computer & Networking Systems</a></li>
+                        <li><a href="#">EPBX Systems</a></li>
+                        <li><a href="#">Biometric Devices</a></li>
+                        <li><a href="#">Video Door Phones</a></li>
+                        <li><a href="#">Mobile-signal-booster</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect With Us</h3>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy;  | Call Us: <a href="tel:9717153364" style="color: #94a3b8; text-decoration: none;">+91 9717153364</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('nav').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
